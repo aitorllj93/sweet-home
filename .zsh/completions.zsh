@@ -6,11 +6,30 @@ _project_completions() {
     "$HOME/Services"
     "$HOME/Extensions/vscode"
   )
-  local projects=()
+
+  local -a projects descs
+
   for base in "${base_dirs[@]}"; do
-    [[ -d "$base" ]] && projects+=("$base"/*(N:t))
+    [[ -d "$base" ]] || continue
+    for dir in "$base"/*(N/); do
+      local name="${dir:t}"
+      local desc=""
+
+      if [[ -f "$dir/package.json" ]]; then
+        desc=$(jq -r '.description // empty' "$dir/package.json" 2>/dev/null)
+      fi
+
+      if [[ -z "$desc" && -f "$dir/README.md" ]]; then
+        desc=$(grep -m1 -v '^\s*#\|^\s*$' "$dir/README.md" 2>/dev/null | head -c 60)
+      fi
+
+      projects+=("$name")
+      descs+=("$name: ${desc:-$dir}")
+
+    done
   done
-  compadd -U -a projects
+
+  compadd -l -d descs -a projects
 }
 
 compdef _project_completions goto
