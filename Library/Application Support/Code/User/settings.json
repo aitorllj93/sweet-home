@@ -1,0 +1,84 @@
+{
+	"breadcrumbs.enabled": false,
+	"chat.disableAIFeatures": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"source.fixAll.biome": "explicit"
+	},
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "off",
+		"strings": "on"
+	},
+	"editor.tabSize": 2,
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.js",
+		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+		"*.jsx": "${capture}.js",
+		"*.tsx": "${capture}.ts",
+		"tsconfig.json": "tsconfig.*.json",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+		"*.sqlite": "${capture}.${extname}-*",
+		"*.db": "${capture}.${extname}-*",
+		"*.sqlite3": "${capture}.${extname}-*",
+		"*.db3": "${capture}.${extname}-*",
+		"*.sdb": "${capture}.${extname}-*",
+		"*.s3db": "${capture}.${extname}-*"
+	},
+	"extensions.ignoreRecommendations": true,
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"files.exclude": {
+		"**/._*": true
+	},
+  "git.openRepositoryInParentFolders": "always",
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/microsoft/vscode/": true,
+		"https://raw.githubusercontent.com/devcontainers/spec/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://developer.microsoft.com/json-schemas/": true,
+		"https://ui.shadcn.com/schema.json": true,
+		"https://ui.shadcn.com/schema/": true,
+		"https://biomejs.dev": true
+	},
+	"v-pet.lcdFilter": "lcd",
+	"v-pet.randomEggs": true,
+	"window.commandCenter": false,
+	"window.title": " ",
+	"window.titleBarStyle": "custom",
+	"workbench.colorCustomizations": {
+		"editorCursor.background": "#f0f9ff",
+		"editorCursor.foreground": "#0284c7",
+		"editorError.foreground": "#dc2626",
+		"editorWarning.foreground": "#ca8a04"
+	},
+	"workbench.colorTheme": "Monochrome Light Subtle",
+	"workbench.editor.enablePreview": false,
+	"workbench.editor.tabSizing": "fit",
+	"workbench.editor.wrapTabs": true,
+	"workbench.layoutControl.enabled": false,
+	"workbench.sideBar.location": "right",
+	"workbench.startupEditor": "readme",
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"workbench.iconTheme": "pixel-icons-grayscale",
+	"workbench.productIconTheme": "pixel-product-icons"
+}
