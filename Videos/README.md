@@ -1,3 +1,7 @@
+---
+allowed-extensions: mp4 mkv mov
+---
+
 # Videos/
 
 > Recursos de vídeo y media personal, organizados por tipo.

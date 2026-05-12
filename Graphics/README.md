@@ -1,3 +1,7 @@
+---
+allowed-extensions: png jpg svg webp aseprite psd
+---
+
 # Graphics/
 
 > Todos los recursos visuales. La sección más grande y estructurada del espacio de trabajo.

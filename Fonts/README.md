@@ -1,3 +1,7 @@
+---
+allowed-extensions: ttf otf woff2
+---
+
 # Fonts/
 
 > Tipografías de uso transversal. 

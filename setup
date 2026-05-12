@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DEST="${1:-$HOME}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+DEST="$(realpath "$DEST")"
+SCRIPT_DIR="$(realpath "$SCRIPT_DIR")"
+
+if [[ "$DEST" == "$SCRIPT_DIR" || "$DEST" == "$SCRIPT_DIR/"* ]]; then
+    echo "Error: destination cannot be inside source directory."
+    exit 1
+fi
+
+rsync -av \
+  --exclude="$(basename "$0")" \
+  "$SCRIPT_DIR"/ "$DEST"/
+
+
+# Hide Original Folders
+chflags hidden ~/Desktop
+chflags hidden ~/Music
+chflags hidden ~/Movies
+chflags hidden ~/Pictures
