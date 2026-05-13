@@ -82,3 +82,20 @@ show() {
   fi
 
 }
+
+# Converts a given image to grayscale using imagemagick
+grayscale() {
+  local MAGICK=$(which magick)
+
+  for f in "$@"
+  do
+    local dir=$(dirname "$f")
+    local filename=$(basename "$f")
+    local name="${filename%.*}"
+    local ext="${filename##*.}"
+
+    local output="$dir/${name}_grayscale.$ext"
+
+    "$MAGICK" "$f" -colorspace Gray "$output"
+  done
+}

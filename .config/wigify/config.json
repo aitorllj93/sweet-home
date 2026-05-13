@@ -1,0 +1,18 @@
+{
+  "widgets": [
+    {
+      "id": "2415157a-821f-47d1-ac5f-ff6018c3aec7",
+      "widgetName": "gotchu",
+      "position": {
+        "x": 1641,
+        "y": 741
+      },
+      "size": {
+        "width": 200,
+        "height": 140
+      },
+      "variables": {},
+      "enabled": true
+    }
+  ]
+}
