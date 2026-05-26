@@ -13,6 +13,8 @@
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
 	},
+	"editor.cursorStyle": "block",
+	"editor.cursorBlinking": "solid",
   "editor.defaultFormatter": "biomejs.biome",
 	"editor.fontFamily": "\"Monogram\", Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontSize": 20,
@@ -68,6 +70,11 @@
 		"https://ui.shadcn.com/schema/": true,
 		"https://biomejs.dev": true
 	},
+  "tailwindCSS.classFunctions": [
+    "cva",
+    "cn",
+    "cx"
+  ],
 	"v-pet.lcdFilter": "lcd",
 	"v-pet.randomEggs": true,
 	"window.commandCenter": false,
@@ -75,9 +82,9 @@
 	"window.titleBarStyle": "custom",
 	"workbench.colorCustomizations": {
 		"editorCursor.background": "#f0f9ff",
-		"editorCursor.foreground": "#0284c7",
-		"editorError.foreground": "#dc2626",
-		"editorWarning.foreground": "#ca8a04"
+		"editorCursor.foreground": "#008751",
+		"editorError.foreground": "#ff004d",
+		"editorWarning.foreground": "#ffa300"
 	},
 	"workbench.colorTheme": "Monochrome Light Subtle",
 	"workbench.editor.tabSizing": "fit",
