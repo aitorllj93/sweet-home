@@ -1,4 +1,6 @@
 _project_completions() {
+  local include_workspaces="$1"
+
   local base_dirs=(
     "$HOME/Projects/Active"
     "$HOME/Projects/Maintenance"
@@ -7,10 +9,13 @@ _project_completions() {
     "$HOME/Extensions/vscode"
   )
 
+  local workspace_root="$HOME/Projects"
+
   local -a projects descs
 
   for base in "${base_dirs[@]}"; do
     [[ -d "$base" ]] || continue
+
     for dir in "$base"/*(N/); do
       local name="${dir:t}"
       local desc=""
@@ -25,13 +30,30 @@ _project_completions() {
 
       projects+=("$name")
       descs+=("$name: ${desc:-$dir}")
-
     done
   done
+
+  if [[ "$include_workspaces" == "with-workspaces" && -d "$workspace_root" ]]; then
+    for ws in "$workspace_root"/*.code-workspace(N); do
+      local file="${ws:t}"
+      local name="${file:r}"
+
+      projects+=("$name")
+      descs+=("$name: VSCode Workspace")
+    done
+  fi
 
   compadd -l -d descs -a projects
 }
 
-compdef _project_completions goto
-compdef _project_completions hack
-compdef _project_completions show
+_project_completions_default() {
+  _project_completions
+}
+
+_project_completions_with_workspaces() {
+  _project_completions with-workspaces
+}
+
+compdef _project_completions_default goto
+compdef _project_completions_with_workspaces hack
+compdef _project_completions_default show

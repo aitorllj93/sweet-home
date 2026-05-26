@@ -41,6 +41,20 @@ hack() {
     "$HOME/Extensions/vscode"
   )
 
+  local workspace_root="$HOME/Projects"
+
+  if [[ -z "$target" ]]; then
+    code "$HOME"
+    return 0
+  fi
+
+  local workspace_file="$workspace_root/$target.code-workspace"
+
+  if [[ -f "$workspace_file" ]]; then
+    code "$workspace_file"
+    return 0
+  fi
+
   for base in "${base_dirs[@]}"; do
     if [[ -d "$base/$target" ]]; then
       code "$base/$target"
@@ -48,12 +62,8 @@ hack() {
     fi
   done
 
-  if [[ -z "$target" ]]; then
-    code "$HOME"
-  else
-    echo "hack: could not find '$target' in any project directory" >&2
-    return 1
-  fi
+  echo "hack: could not find '$target' in any project directory or workspace" >&2
+  return 1
 
 }
 
